@@ -1,5 +1,5 @@
-user <%= node['nginx']['user'] %>;
-worker_processes 4;
+user 'www-data';
+worker_processes <%= node['nginx']['workers'] %>;
 pid /run/nginx.pid;
 
 events {
