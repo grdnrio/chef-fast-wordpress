@@ -2,3 +2,4 @@
 default['nginx']['dir'] = '/etc/nginx'
 
 default['nginx']['workers'] = 10
+default['nginx']['gzip'] = 'on' # or off
