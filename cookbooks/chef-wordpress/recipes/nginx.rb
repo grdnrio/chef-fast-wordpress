@@ -23,3 +23,9 @@ template 'nginx.conf' do
   mode '0644'
   notifies :restart, resources(:service => 'nginx')
 end
+
+# Add site vhost config  WORK IN PROGRESS
+template node['nginx']['site'] do
+  path "/etc/nginx/sites-available/#{node['nginx']['site']}"
+  source 'site.conf.erb'
+end
